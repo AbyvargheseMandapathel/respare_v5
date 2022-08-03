@@ -70,7 +70,7 @@ body {
 
 .img-slider {
     position: relative;
-    width: 1200px;
+    width: 100vw;
     height: 500px;
     margin: 6px 0 0 1.2%;
     background: #1D212B;

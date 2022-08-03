@@ -1,150 +1,92 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
+body {
+    background-color: rgb(226, 226, 221);
+    width: 100vw;
+    font-size: 1.5vh;
+    margin: 0px;
+    padding: 0px;
 }
-
-.nav {
-    background-color: #bd0a0a;
-    overflow: hidden;
-}
-
-.nav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: bold;
-}
-
-.nav a:hover {
-    background-color: rgb(255, 255, 255);
-    color: black;
-}
-
-.nav a.active {
-    background-color: black;
-    color: white;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bolder;
-    font-family: Cascadia Mono;
-}
-
-.categories {
-    font-size: 1em;
-    font-family: Cascadia Mono;
-    padding-top: 0.4%;
-}
-
-.nav input[type="text"] {
-    border: none;
-    border-bottom: 1px solid white;
-    background: whitesmoke;
-    outline: none;
-    height: 30px;
-    width: 250px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.5s;
-    right: 10%;
-    display: block;
-    margin-left: auto;
-    border-radius: 3em;
-    margin-top: 1%;
-    cursor: text;
-}
-
-.nav input[type="text"]:focus {
-    width: 400px;
-    border-color: yellow;
-}
-
 .topic-container {
-    margin: 20px 80px 0 230px;
-}
-
-.topic-container img {
-    height: 20%;
-    width: 75%;
-    border-radius: 0.5em;
-}
-
-input[type=button] {
-    background-color: rgb(255, 0, 0);
-    border: none;
-    width: 17%;
-    color: white;
-    font-weight: bold;
-    border-radius: .5em;
-    font-size: 1.3em;
-    cursor: pointer;
-    padding: 1em 0;
-    margin-bottom: 1.5em;
-    margin-top: 0.2em;
-}
-
-input[type=button]:hover {
-    background-color: rgb(182, 7, 7);
-    font-weight: normal;
-}
-
-.topic-container .row {
+    top: 2.5vh;
+    position: relative;
     display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    left: 25vw;
+    height: auto;
+    width: 48vw;
+    margin: 0px;
+    border-radius: 12px;
 }
 
-.topic-container .topic-statistics {
-    margin: 4px;
-    font-weight: bold;
-    margin-left: 25px;
-}
-
-.topic-container .topic-statistics .agree {
-    margin-left: 27px;
-    margin-bottom: 14px;
-}
-
-.topic-container .topic-des p {
+.topic-container h1 {
     text-align: left;
-    width: 79%;
+    font-family: "Cascadia Mono";
+    font-weight: 600;
+    margin-left: 3vw;
+    margin-bottom: 1vh;
+    margin-top: 4vh;
+    font-size: 2.3em;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
     font-weight: bold;
 }
+.topic-img {
+    position: relative;
+    align-self: center;
+    height: 35vh;
+    width: 90%;
+    background-color: rgb(163, 19, 19);
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 1.1em;
+}
 
-.topic-container .topic-statistics .agree .level {
+.topic-img img {
+    display: inline-block;
+    position: relative;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
-    background-color: #ddd;
 }
 
-.st {
-    text-align: right;
-    color: black;
+.topic-result {
+    position: relative;
+    align-self: center;
+    width: 50%;
+    font-family: "Courier New", Courier, monospace;
+    background-color: rgb(233, 229, 221);
+    border-radius: 1em;
 }
 
-.agreed {
-    width: 800%;
-    /*doing % obtained times 10*/
-    background-color: #00af6f;
-    display: flex;
-    margin-left: 40%;
-    margin-top: 15%;
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
-.disagreed {
-    width: 200%;
-    /*doing % obtained times 10*/
-    background-color: #2196F3;
-    display: flex;
-    margin-left: 40%;
-    margin-top: 15%;
+li {
+    position: relative;
+    right: 0.5vw;
+    align-items: center;
+    list-style-type: none;
+    width: 98%;
+    border-radius: 1vw;
 }
 
 .row1 {
-    display: flex;
-}
-
-.row2 {
-    display: flex;
+    position: relative;
+    left: 1.02vw;
 }

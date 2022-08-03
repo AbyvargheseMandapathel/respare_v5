@@ -1,5 +1,7 @@
 from datetime import datetime
 from decimal import Decimal
+from django.contrib.auth.decorators import login_required
+from.models import UserProfile
 import re
 from urllib.request import Request
 from django.shortcuts import render,redirect
@@ -12,6 +14,7 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializer import ChoiceSerializer,ChoiceIdSerializer
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 def home(request):
     recommended=Topic.objects.all()[:20]
@@ -55,7 +58,8 @@ def signin(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return redirect('home')
+            return render(request,'index.html',{"fname":fname})
+
         else:
             messages.error(request, "Bad Credentials!!")
             return redirect('home')
@@ -70,7 +74,7 @@ def signout(request):
 def topic(request,pk):
     topic=Topic.objects.get(id=pk)
     reactions=Choice.objects.filter(topic_id=pk)
-    return render(request,'topic.html',{'topic':topic,'reactions':list(reactions),'message':None,'percent':None})
+    return render(request,'topic2.html',{'topic':topic,'reactions':list(reactions),'message':None,'percent':None})
 
 @api_view(['GET','POST'])
 def react(request,pk):
@@ -113,4 +117,29 @@ def is_reacted(request,pk):
 
 #@api_view(['GET'])
 #def reactions(request,pk):
-        
+@login_required(login_url='/signin')
+def profile(request):
+    context = {
+        "user": request.user
+    }
+    return render(request,"user.html", context)
+
+#@login_required
+#def profile (request,user_id):
+#    if request.method == 'POST':
+#        user_obj = User.objects.get(id=user_id)
+#        user_profile_obj = UserProfile.objects.get(id=user_id)
+#        user_img = request.FILES['user_img']
+#        fs_handle = FileSystemStorage()
+#        img_name = 'images/user_{0}'.format(user_id)
+#        if fs_handle.exists(img_name):
+#            fs_handle.delete(img_name)
+#        fs_handle.save(img,user_img)
+#        user_profile_obj.profile_img=img_name
+#        user_profile_obj.save()
+#        user_profile_obj.refresh_from_db()
+#        return render(request,'user.html',{'my_profile':user_profile_obj})
+#        if (request.user.is_authenticated and request.user.id == user_id):
+#            user_obj=User.objects.get(id=user_id)
+#            user_profile = UserProfile.objects.get(id=user_id)
+#            return render(request,'user.html',{'my_profile':user_profile})

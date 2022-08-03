@@ -9,7 +9,21 @@
 
     {% load static %}
     <script type='text/javascript' src="{% static 'script.js' %}"></script>
-
+    <link rel="stylesheet" href="/static/topic.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;700&display=swap" rel="stylesheet">
 
     
 </head>
@@ -17,16 +31,21 @@
 <body>
 
     <div class="nav">
-        <a class="logo" href="#home">RESPARE</a>
-        <div class="categories">
+        <a class="logo" href="#home">respare.</a>
+        <div class="categories nav">
             <a href="categories">Categories</a>
             <a href="about">About</a>
-            <a class="login" href="signin/">Login</a>
-            <div class="rs"></div>
+            {%if user.is_authenticated %}
+            <a class="login">Welcome {{ fname }}</a>
+            <a class="profile" href="/profile">Profile</a>
+            <a class="Signout"  href="/signout">Sign Out</a>
+            {% else %}
+            <a class="login" href="/signin">Login</a>
+            {% endif %}
             <input type="text" class="searchbox" placeholder="Search...">
         </div>
     </div>
-    </div>
+
     <div class="img-slider">
         <button class="prev-btn"><img src="images/pre.png" alt=""></button>
         <button class="next-btn"><img src="{% static 'images/nxt.png' %}" alt=""></button>

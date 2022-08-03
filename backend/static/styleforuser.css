@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  background-color: #bd0a0a;
+  overflow: hidden;
+}
+
+.nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: bold;
+}
+
+.nav a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.nav a.active {
+  background-color: black;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-type: bolder;
+  font-family: Cascadia Mono;
+}
+.categories {
+  font-size: 1em;
+  font-family: Cascadia Mono;
+}
+
+.nav input[type="text"] {
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  width: 250px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s;
+  right: 10%;
+  display: block;
+  margin-left: auto;
+}
+.nav input[type="text"]:focus {
+  width: 400px;
+  border-color: yellow;
+}
+.wrapper {
+  padding-right: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.profile {
+  text-align: centre;
+  padding: 20px 80px;
+  border-radius: 20px;
+}
+
+.image {
+  align-items: center;
+  justify-content: centre;
+  border-radius: 50%;
+  background: gray;
+  padding: 6px;
+  margin-top: 0.5px;
+  width: 250px;
+  height: 250px;
+}
+
+.details {
+  text-align: top;
+  padding: 40px 80px 80px 40px;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.follow {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background: #bd0a0a;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  cursor: pointer;
+  color: white;
+  box-shadow: 2px 3px gray;
+  border-radius: 30px;
+}
+.forbutton {
+  text-align: centre;
+  margin: 50px 20px;
+}
+.follow:hover {
+  background: light blue;
+}
+
+.activity {
+  color: red;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: red;
+}
+.P-list-item-title {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  width: 100%;
+  padding: 0px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.P-list-item-desc {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
+
+.P-list-item-btn {
+  width: 100%;
+  height: 30px;
+  border-radius: 2px;
+  border: none;
+  background: #4492e6;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0;
+  color: white;
+  font-weight: 700;
+}
+
+.section-3 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.section-4 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  flex-direction: row-reverse;
+}
+.scroll {
+  width: 550px;
+  height: calc(80vh - 20px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  background: #34373a71;
+}
+
+.list {
+  width: 100%;
+  padding: 20px;
+}
+.list-item {
+  margin: 10px 0;
+  width: 500px;
+  height: 140px;
+  background: #181515;
+  background-size: cover;
+  border-radius: 8px;
+  display: flex;
+  padding: 10px 0;
+}
+
+.list-thumbnail {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+.list-desc {
+  width: calc(100% - 100px);
+  height: 120px;
+  margin-right: 10px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.list-title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #4492e6;
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+}
+.list-prize {
+  width: 100%;
+  height: 35%;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.list-prize span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4492e6;
+}
+
+.list-entry {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.list-entry-btn {
+  padding: 8px;
+  border: none;
+  background: #4492e6;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: "Comfortaa", cursive;
+  border-radius: 2px;
+}
+
+.list-entry-btn:hover {
+  background: #4492e6;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: #4492e6;
+}
+
+.scroll::-webkit-scrollbar-track {
+  width: 10px;
+  background: rgba(0, 0, 0, 0.171);
+}

@@ -83,9 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'respare',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
+        'PORT':'5500',
         'USER':'root',
-        'PASSWORD':'password@123'
+        'PASSWORD':'password'
 
     }
 }
